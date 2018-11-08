@@ -1,0 +1,12 @@
+Sub Macro1()
+  Dim sht As Worksheet
+  Application.ScreenUpdating = False
+  Application.DisplayAlerts = False
+  For Each sht In Sheets
+  sht.Copy
+  ActiveWorkbook.SaveAs Filename:=ThisWorkbook.Path & "\" & sht.Name & ".xls"
+  ActiveWorkbook.Close
+  Next
+  Application.DisplayAlerts = True
+  Application.ScreenUpdating = True
+End Sub
